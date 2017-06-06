@@ -1,0 +1,17 @@
+<script>
+var baseDomain = (location.href.match(/^https?\:\/\/([-\w]+(\.[-\w]+)+)\/?/) || [,'']) [1];
+var reportUrl = '';
+switch (baseDomain) {
+    case 'log.fengzhang.com':
+        reportUrl = 'http://log.fengzhang.com/reportAdmin';
+        break;
+    case 'project1-log.yooo.moe':
+        reportUrl = 'http://project1-log.yooo.moe/reportAdmin';
+        break;
+    case '127.0.0.1':
+        //reportUrl = 'http://project1-log.yooo.dev/report';
+        reportUrl = 'http://127.0.0.1/project1240/backend/?r=manage/reportAdmin';
+        break;
+}
+if (reportUrl) (new Image).src = reportUrl;
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>后台</title>
+<script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="<{$baseWebPath}>/res/bootstrap-datepicker/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<{$baseWebPath}>/res/bootstrap-datepicker/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<link href="<{$baseWebPath}>/res/bootstrap-datepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+<!-- <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+           
+        </div>
+    </div>
+</div> -->
+    <div class="container-fluid">
+        <br>
+        <div class="row-fluid well">
+            <h1 align="center">风杖网络后台</h1>
+        </div>
+        <div class="row-fluid">
+            <ul class="col-xs-2 nav nav-pills nav-stacked">
+                  <li role="presentation" class="<{if $route eq 'manage/index'}>active<{/if}>"><a href="<{url r='manage/index'}>">访问日志</a></li>
+                  <li role="presentation" class="<{if $route eq 'manage/rootist'}>active<{/if}>"><a href="<{url r='manage/rootist'}>">审计日志</a></li>
+                  <li role="presentation" class="<{if $route eq 'manage/password'}>active<{/if}>"><a href="<{url r='manage/password'}>">修改密码</a></li>
+                  <li role="presentation"><a href="<{url r='manage/logout'}>">退出</a></li>
+                  <li class="well" role="presentation">
+                      <p>历史游客总数：<span id="diy-cookie-num">0</span></p>
+                      <p>历史访问总数：<span id="diy-tourist-num">0</span></p>
+                      <p>历史审计总数：<span id="diy-rootist-num">0</span></p>
+                  </li>
+            </ul>
+            <div class="col-xs-10">
+                <{include file=<{$__template_file}>}>
+            </div>
+        </div>
+    </div>
+
+    <{include file="common/report_admin.html"}>
+
+    <{include file="common/report_num.html"}>
+
+</body>
+</html>
