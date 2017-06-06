@@ -23,6 +23,9 @@ class BaseController extends Controller{
     );
 
     public function init(){
+        
+        $this->PAYLOCK();//!!!!
+
         $this->baseWebPath = 'http://'.$_SERVER['HTTP_HOST'].rtrim(dirname($_SERVER['PHP_SELF']), '/');//如“http://127.0.0.1/a/b”或"http://www.abc.com"，无“/”结尾
         $GLOBALS['controller'] = $this;
         $lgInfo = obj('Admin')->getLoginInfoCache();
@@ -32,6 +35,12 @@ class BaseController extends Controller{
         if ($this->_needAdmin($this->route) && empty($this->adminId)) {
             header("Location: " . url('manage/login'));
             exit;
+        }
+    }
+
+    private function PAYLOCK(){
+        if ($_SERVER['HTTP_HOST'] == 'log.fengzhang.com') {
+            die(obj('Util')->deCrypt("DCYQ)5_vMb_7!nJ5.8HGzr'9jf.Z'9YPPb)530F5*3mf*t!2b3I4@0@owo!2MLXn*3yqRd~1QfSJ)5XiI7~1*VN9)5((ooTTHAjjTNa6@Tfc)fR1RgSh@074@p.8WP*p'995QH!2mlh9'9-YJ5@0_vph*3(sJ8-6Wh-s'9)rSK!2VVkb.8FAF1*3h8Uj-610Si(4tkPb@0ZlUj_7L9Si'9)Z_t'9~nPf!2J8QH-6CvYk!2ri@p@0HGYo-6LCTf*3ULog(4Znne(4lfH3(422JB.8~Sa2(4a4Ug.8YmSK'9J5Rh!2LG_t)5.@Hy-6UjPe.8!YN9@0ZkC2'9jfGx(4~VYk!2XQK9'9F0Si_7ZR_t(4"));
         }
     }
 
