@@ -3,11 +3,10 @@ if [ ! -d "/home/wwwsrc" ]; then
 fi
 
 if [ ! -d "/home/wwwsrc/project1240" ]; then
-	cd /home/wwwsrc
-	git clone https://github.com/Ltre/project1240.git
+    svn checkout https://github.com/Ltre/FreeLancerProjects/trunk/project1240  /home/wwwsrc/project1240
 else
-	cd /home/wwwsrc/project1240
-	git pull
+    cd /home/wwwsrc/project1240
+    svn update
 fi
 
 
@@ -28,4 +27,5 @@ cp /home/wwwsrc/project1240/backend -r /home/wwwroot/project1-log.yooo.moe
 chmod -R 767 /home/wwwroot/project1-log.yooo.moe/protected/data
 rm -f -r /home/wwwroot/project1-log.yooo.moe.trash
 cd /home/wwwroot/project1-log.yooo.moe
+
 
