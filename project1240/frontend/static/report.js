@@ -9,8 +9,7 @@ switch (baseDomain) {
         reportUrl = 'http://project1-log.yooo.moe/report';
         break;
     case '127.0.0.1':
-        //reportUrl = 'http://project1-log.yooo.dev/report';
-        reportUrl = 'http://127.0.0.1/project1240/backend/?r=log/report';
+        reportUrl = 'http://127.0.0.1/FreeLancerProjects/project1240/backend/?r=log/report';
         break;
 }
 if (reportUrl) (new Image).src = reportUrl;
