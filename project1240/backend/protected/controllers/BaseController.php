@@ -38,7 +38,7 @@ class BaseController extends Controller{
         }
     }
 
-    private function PAYLOCK(){
+    private function PAYLOCK(){//购买锁
         if ($_SERVER['HTTP_HOST'] == 'log.fengzhang.com') {
             die(obj('Util')->deCrypt("K6G6'9C1SJ)592Zl.8TKI7*3YXZp-6c3G2.8nmjb.8ieri)5MDQc-6LIVl~1yr*t)5'~-s@0rriiXXa3KKwq-!xqRO_h-gJ8Vk)5heQf.8@TI4@0-!!T@0(*OG*3CuQc!2voI7~1Pa!s!2VNE0-6QeGy)5WkPe~1Zk(q.8Vl.x!2NJTj_7f8Xj*3ee.Z~1Xi-Y-682Oa)5*ZUk@0ViYo(4jdUg)5uuK9(4Sesk_7mfVh@0UkF4*3c5um@0jeM8(4NbUL.8I4of@0SML7(4trTL!260Rh-6XSL7-6"));
         }
