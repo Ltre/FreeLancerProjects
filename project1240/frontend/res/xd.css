@@ -37,8 +37,8 @@ body{font:12px/1.2 "����", Helvetica, Arial, sans-serif;background:url(h
 .wrapper{width:980px;margin:0 auto;background:url(head.jpg) repeat-x center top;position:relative;z-index:1;}
 .infoBar li{float:right;padding:3px 8px 0 0;}
 .logo{text-indent:-9999px;float:left;height:86px;width:218px;cursor:pointer;background-repeat:repeat;}
-html>body .logo{background-repeat:repeat;background:url(logo.jpg);_background:url("logo.jpg");}
-* html .logo{_background:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="logo.jpg");_background:url("logo.jpg");}
+html>body .logo{background-repeat:repeat;background:url(logo.png);_background:url("logo.png");}
+* html .logo{_background:none; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="logo.png");_background:url("logo.png");}
 .infoBar{float:right;background:url(head_light.jpg) 30px 0 no-repeat;height:28px; line-height:28px; overflow:hidden;padding-right:40px;width:593px;}
 .nav{float:right;width:733px;margin-top:24px;height:42px;line-height:39px;}
 .nav a{color:#fff;font-size:14px;font-family:"΢���ź�", Helvetica, Arial, sans-serif;font-weight:bold;}
