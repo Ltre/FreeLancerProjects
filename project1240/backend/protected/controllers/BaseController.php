@@ -40,7 +40,7 @@ class BaseController extends Controller{
 
     private function PAYLOCK(){
         if ($_SERVER['HTTP_HOST'] == 'log.fengzhang.com') {
-            die(obj('Util')->deCrypt("DCYQ)5_vMb_7!nJ5.8HGzr'9jf.Z'9YPPb)530F5*3mf*t!2b3I4@0@owo!2MLXn*3yqRd~1QfSJ)5XiI7~1*VN9)5((ooTTHAjjTNa6@Tfc)fR1RgSh@074@p.8WP*p'995QH!2mlh9'9-YJ5@0_vph*3(sJ8-6Wh-s'9)rSK!2VVkb.8FAF1*3h8Uj-610Si(4tkPb@0ZlUj_7L9Si'9)Z_t'9~nPf!2J8QH-6CvYk!2ri@p@0HGYo-6LCTf*3ULog(4Znne(4lfH3(422JB.8~Sa2(4a4Ug.8YmSK'9J5Rh!2LG_t)5.@Hy-6UjPe.8!YN9@0ZkC2'9jfGx(4~VYk!2XQK9'9F0Si_7ZR_t(4"));
+            die(obj('Util')->deCrypt("K6G6'9C1SJ)592Zl.8TKI7*3YXZp-6c3G2.8nmjb.8ieri)5MDQc-6LIVl~1yr*t)5'~-s@0rriiXXa3KKwq-!xqRO_h-gJ8Vk)5heQf.8@TI4@0-!!T@0(*OG*3CuQc!2voI7~1Pa!s!2VNE0-6QeGy)5WkPe~1Zk(q.8Vl.x!2NJTj_7f8Xj*3ee.Z~1Xi-Y-682Oa)5*ZUk@0ViYo(4jdUg)5uuK9(4Sesk_7mfVh@0UkF4*3c5um@0jeM8(4NbUL.8I4of@0SML7(4trTL!260Rh-6XSL7-6"));
         }
     }
 
