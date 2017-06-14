@@ -1,0 +1,128 @@
+/*	xd.com loginPage css
+	writed by Yudonghan@verycd.com
+	2011.3.23
+*/
+
+.loginPageLeft{float:left;width:460px;padding:47px 0 55px 40px;color:#545454;border-right:1px solid #c3d6e7;}
+.loginPageRight{float:left;width:377px;padding:60px 0 0 100px;}
+.loginPage{width:978px;overflow:hidden;background:url(../login_page.jpg) 0 bottom repeat-x;max-height:585px;border-width:0 1px 0 1px;border-style:solid;border-color:#c3d6e7;}
+.headBox{background:url(../loginHead.jpg) no-repeat;height:42px;line-height:42px;color:#026fe8;font-size:16px;padding-left:20px;font-weight:bold;}
+.footer{clear:both;}
+
+.loginPageLeft .info{font-size:11px;clear:both;padding-top:5px;display:block;height:15px;color:#999;}
+.read{padding-left:102px;height: 31px;}
+.read input{vertical-align:middle;}
+.read label{*padding-top:5px;}
+.regButton{padding-left:130px;}
+#regP{padding:20px 0 0 25px;line-height:30px;}
+
+.verify{padding-left:130px;width:174px;height:62px;margin:10px 0;}
+.lgpage_kefu{margin:15px 15px 0 30px;}
+.loginPageRight h1{color:#2186e7;font-size:16px;font-weight:bold;padding-bottom:20px;}
+.loginPageRight p{color:#444;width:300px;line-height:20px;padding-bottom:57px;}
+.reg_button{
+	background:url(../button.jpg) 0 -107px;
+	display:block;
+	height:55px;
+	width:211px;
+	text-align:center;
+	line-height:50px;
+	font-size:20px;
+	font-weight:bold;
+	color:#FF570C;
+	font-family:"΢ź", Helvetica, Arial, sans-serif;
+}
+.reg_button:hover{
+	background-position:-215px -107px;
+}
+.loginpage{
+	padding-top:5px;
+}
+#loginForm{padding-top:120px;text-align:center;width:100%;margin:0 auto;}
+
+.findPassword{padding-left:15px;text-decoration:underline;}
+.service{clear:both;padding:13px 0 0 35px;border-top:1px solid #c3d6e7;}
+/*loginpage עҳ棬loginpage2 ǵ¼ҳ档*/
+.loginPage2{background-position:center bottom;height:455px;}
+
+.service h1{padding-bottom:10px;font-weight:bold;font-size:16px;}
+.service h1 span{font-weight:normal;font-size:12px;}
+
+
+.loginPageLeft dl .info_error{color:red;}
+.loginPageLeft dl .info_ok{color:#1BE03F;}
+
+
+.info_error{
+    color: red;
+}
+.info_ok{
+    color: #1BE03F;
+}
+/*new register page 2011.5.5 yudonghan@verycd.com*/
+
+.content_lv1{
+	height:430px;
+	border-width:1px 0;
+	border-color:#ff9c00;
+	border-style:solid;
+	position:relative;
+}
+.content_lv2{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+	background:white;
+	height:430px;
+}
+.content_lv3{
+	width:980px;
+	margin:0 auto;
+	
+}
+.content_lv4{
+	position:absolute;
+	top:0;
+}
+.cross_hover{position:absolute;left:119px;top:41px;opacity:0;cursor:pointer;filter:alpha(opacity=0);}
+.img_wrapper{width:980px;margin:0 auto;position:relative;height:240px;}
+.reg_login_a{color:#2186e7;}
+.reg_login_a:hover{text-decoration:underline;}
+.reg_footer{width:740px;margin:0 auto;padding:225px 0 20px 0;overflow:hidden;}
+.footer_a{color:#6BBCFF;text-decoration:none;border-right:1px solid #6BBCFF;padding:0 15px 0 10px;}
+.footer_a:hover{text-decoration:underline;}
+.reg_footer_right{float:left;padding:20px 0 15px 20px;}
+.content_left{float:left;border-right:1px dashed #ccc;padding:65px 55px 0 108px;height:245px;margin-top:22px;}
+.content_right{float:left;padding:30px 0 0 30px;width:600px;}
+.content_title{background:url(../reg_sp.png) 0 -90px;_background:url(../reg_sp_ie6.png) 0 -90px;height:54px;width:180px;}
+#UserRegisterForm .label{float:left;width:100px;text-align:right;padding-top:10px;font-weight:bold;color:#545454;}
+#UserRegisterForm .reg_input{float:left;display:block;}
+#UserRegisterForm .line{clear:both;height:12px;}
+#UserRegisterForm .line.error{clear:both;padding-left:115px;padding-top:10px;padding-bottom:10px;height:12px;color:red;font-size:15px;}
+
+.reg_input{background:url(../reg_sp.png) -187px -73px ;_background:url(../reg_sp_ie6.png) -187px -73px ;height:32px;width:218px;padding:3px 5px;margin-bottom:12px;}
+.reg_input_focus{background:url(../reg_sp.png) -187px -111px !important;_background:url(../reg_sp_ie6.png) -187px -111px !important;}
+.reg_input input{border:none !important;height:32px;width:222px;background:none;line-height:32px;}
+.reg_button_gray{background:url(../reg_sp.png) 0 -45px;_background:url(../reg_sp_ie6.png) 0 -45px;height:44px;width:151px;border:none;text-indent:-9999px;display:block;cursor:pointer;float:left;}
+.reg_button_orange{background:url(../reg_sp.png) 0 0;_background:url(../reg_sp_ie6.png) 0 0;height:44px;width:151px;border:none;text-indent:-9999px;display:block;cursor:pointer;float:left;}
+
+.reg_input_captcha{
+    float:left;display:block;
+    height:28px;width:228px;margin-bottom:12px;
+}
+.reg_input_captcha img {
+    float:left;display:block;
+    margin-left: 5px;
+    line-height: 28px;margin-top: 2px;
+    width:100px;
+    height: 35px;
+
+}
+.reg_input_captcha input{float:left;height:28px;width:108px;line-height:32px;}
+
+#UserRegisterForm .info{background:url(../reg_sp.png) -157px -9px;_background:url(../reg_sp_ie6.png) -157px -9px;float:left;height:23px;width:200px;padding:5px 0 0 20px;color:white;display:block;}
+#UserRegisterForm .erro{background:url(../reg_sp.png) -157px -44px ;_background:url(../reg_sp_ie6.png) -157px -44px ;display:block;float:left;height:23px;width:200px;padding:5px 0 0 45px;color:white;display:block;}
+#UserRegisterForm .ok{background:url(../reg_sp.png) -151px -75px;_background:url(../reg_sp_ie6.png) -151px -75px;display:block;float:left;height:15px;width:18px;margin:10px 0 0 10px;display:block;}
+#UserRegisterForm .hide{display:none}
+.fl{float:left}
+.shensu_table{width:70%;margin:20px auto;}
+.shensu_table td{padding:3px 5px;border:1px solid #C3D6E7;}

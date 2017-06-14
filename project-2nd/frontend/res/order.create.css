@@ -1,0 +1,171 @@
+#payment{
+    /*float: right;*/
+    padding: 20px 10px;
+    height:100%;
+    width:675px;
+    overflow:hidden;
+}
+
+.title{
+   font-weight:bold; padding:0px 0px 0px 8px;color: #b72b10;font-size: 14px;
+}
+.title_2{
+      width:718px; margin-left:5px;font-weight:bold; padding:0px 0px 6px 8px;color: #6082a4;font-size: 14px;
+}
+
+.title_2,.title_2_orders{background:url(../index_long_head.jpg) ;height:30px;width:718px;}
+.title_2 span {color:#6082a4;font-weight:bold;line-height:30px;padding-left:10px;float:left;}
+
+.title_3{ width:1000px; font-size:14px; font-weight:bold; margin-top:20px;}
+.title_3,.title_3_orders{height:30px;width:718px; height:40px;}
+.title_3 span {color:#2b2b2b;font-weight:bold;line-height:30px;float:left;}
+
+.cb{
+    clear: both;
+}
+ul.chongzhi {width: 700px;height:auto;margin-top: 6px;}
+ul.chongzhi li {height: 120px;display:inline;}
+ul.chongzhi li a{ text-decoration: none;display:block;color:#333;width:170px; height:150px;overflow:hidden; float:left;background:#FFFFFF ; text-align:center; margin-left:45px; padding-top:15px;}
+ul.chongzhi li img { padding-bottom:4px;}
+ul.chongzhi li a:hover{ color: #8ac242;background: #e7f2db ;text-decoration:none;}
+
+#pay{
+    /*margin:16px 6px 6px;
+	background: url($webdb[www_url]/images/hy/bg.jpg) 0px;*/
+}
+.payl{width:145px;float:left;height: 100%;}
+.payr{float:left;width:495px;border:#8AC242 solid 1px;height:100%;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+      padding:5px 15px;min-height:300px;display:inline;overflow:hidden;}
+#payment .menu{text-align:right;margin-top:10px;position:relative;}
+.menu li{
+    border:1px solid white;
+    border-right:none;
+    margin:0 0 10px 0;
+    -moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;
+    height:40px;
+    line-height:40px;
+    width:147px;
+}
+
+.menu .w{
+    border:1px solid #8ac242;
+    border-right:none;
+}
+.menu .w:hover{
+    background:none;
+    color:#4D4D4D;
+
+}
+.menu li a{
+    display: block;
+    width: 130px;
+    padding-right:15px;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
+    color:#4D4D4D;
+
+    height:35px;
+}
+.menu a:hover {
+    background: url($webdb[www_url]/images/hy/pay_nav2.jpg) no-repeat 135px -28px;
+    color:#DC2F07;
+    padding-left:0;
+}
+.menu li .h{
+    background: url($webdb[www_url]/images/hy/pay_nav2.jpg) repeat-y 136px 3px;
+    color:#DC2F07;
+    height:40px;
+}
+.ali{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat 0 -36px;display:block;height:30px;}
+.b_c{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat 0 0;display:block;height:30px;}
+.szx,div.szx2{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat 0 -78px;display:block;height:30px;}
+.msg{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat -2px -160px;height:30px;}
+.phone{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat 0 -130px;display:block;height:30px;}
+.shengfeng{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat -2px -218px;display:block;height:30px;}
+.caifutong{background: url($webdb[www_url]/images/hy/pay_icon2.jpg) no-repeat 0 -182px;display:block;height:30px;}
+.pay_title_line{
+    height:25px;
+    line-height:25px;
+    overflow:hidden;
+    padding:5px 0;
+    border-bottom:1px solid #D9E5D8;
+}
+.title_img{
+    float:right;
+}
+.pay_title{
+    font-size:14px;
+    font-weight:bold;
+    float:left;
+}
+.create_form{padding:10px 10px 10px 50px;overflow:hidden;}
+.create_line{
+    padding:10px 0;
+	clear:both;
+    overflow:hidden;
+}
+.create_line_left{width:100px;text-align:right;float:left;}
+.create_line_right{width:335px;float:left;overflow:hidden;}
+
+.bank_list{
+	width:460px;
+	float:left;
+}
+.bank_list .bank{
+	float:left;
+	padding:5px;
+	width:140px;
+}
+.choose_bank_title{
+    display:block;
+    padding:5px 0 10px;
+}
+.bank input{
+    float:left;
+}
+.bank label{
+    float:left;
+    overflow:hidden;
+}
+.bank_radio{
+    padding:10px 5px 0 0;
+    float:left;
+}
+
+.radio_box{
+    float:left;
+    width:100px;
+    padding:0 0 10px 0;
+}
+.radio{vertical-align:middle;}
+#appId{
+    vertical-align:middle;
+}
+#create_msg{
+    width:430px;
+    border:1px solid #FFAE23;
+    background:#ffffcc;
+    padding:8px;
+}
+.create_msg{
+	border:1px solid #8AC242;
+    background:#e7f2db;
+    padding:3px;
+	width:auto;
+}
+#amount input{
+    width : 90px;
+}
+#choose_bank,
+#message,
+#amount_szx,
+#amount_phone{
+    display: none;
+}
+.short{width:auto;}
+
+#server_info{padding-top: 2px;float:right;}
+#choose_bank{height: 200px;}
+.order_submit{background:url(../imgs/order_button.jpg);border:none;height:32px;text-indent:-9999px;width:136px;cursor:pointer;}
+

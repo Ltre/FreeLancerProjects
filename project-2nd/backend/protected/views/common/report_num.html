@@ -1,0 +1,11 @@
+<script>
+$(function(){
+	$.get('<{url r="manage/reportNum"}>', function(j){
+		if (j.rs) {
+			$('#diy-tourist-num').text(j.data.touristNum);
+			$('#diy-rootist-num').text(j.data.rootistNum);
+			$('#diy-cookie-num').text(j.data.cookieNum);
+		}
+	}, 'jsonp');
+});
+</script>
