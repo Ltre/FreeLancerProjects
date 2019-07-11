@@ -1,13 +1,10 @@
 <?php
-/**
- * 高级封装Model
- * @author Ltre
- */
+
 class SeniorModel extends Model {
 
     //高级COUNT方法
     public function seniorCount($args){
-        @$data = $this->seniorSelect(array(
+        $data = $this->seniorSelect(array(
             'from' => $args['from'],
             'where' => $args['where'] ?: array(),
             'listable' => false, //是否取列表
@@ -15,14 +12,14 @@ class SeniorModel extends Model {
         ));
         return $data['count'];
     }
-    
-    
+
+
     /**
      * 高级SELECT查询方法
      * <pre>
      * @param $args 复合参数，包含：
      *      select => SELECT子句，如"user.a, abc, log.id"
-     *      form => FROM子句，如"v_user u LEFT JOIN v_fanhe_upload fh ON fh.uid = u.user_id"
+     *      from => FROM子句，如"v_user u LEFT JOIN v_fanhe_upload fh ON fh.uid = u.user_id"
      *      where => WHERE条件多维数组，如
      *              array(
      *                  'OR',
@@ -54,31 +51,48 @@ class SeniorModel extends Model {
      *      limitBy => 分页所需参数，数组元素顺序如下：页码、每页结果集个数上限、可见的页码范围长度。
      *                 如：[5, 10, 10]表示取第5页，显示最多10条数据，假设总页数足够，则可见的页码为[5,6,7,8,9,10,11,12,13,14]
      *      listable => 值true|false，是否获取列表，默认为是
-     *      pageable => 值true|false, 是否获取分页，默认为是
+     *      pageable => 值true|false, 是否获取分页，默认为否
      * </pre>
      */
     public function seniorSelect($args){
-        @$select = $args['select'] ?: '*';
-        @$from = $args['from'] ?: " {$this->table} ";
-        @$where = $args['where'] ?: array();
-        @$orderBy = $args['orderBy'] ?: '';
-        @$groupBy = $args['groupBy'] ?: '';
-        @$limitBy = $args['limitBy'] ?: array(1, 10, 10);
-        @$listable = (! isset($args['listable']) || $args['listable']) ? true : false;
-        @$pageable = (! isset($args['pageable']) || $args['pageable']) ? true : false;
-    
-        $page = max(1, (int)$limitBy[0]);
-        $limit = $limitBy[1];
-        $scope = $limitBy[2];
-        $offset = ($page - 1) * $limit;
-        $limitSql = $pageable ? "LIMIT {$offset}, {$limit}" : "";
+        if (empty($args['from']) && empty($this->table_name)) {
+            throw new Exception('The [args.from] is empty!');
+        }
+        if (! (empty($args['limitBy']) || is_array($args['limitBy']) && 3 == count($args['limitBy']) && is_numeric(join('', $args['limitBy'])))) {
+            throw new Exception('The [args.limitBy] is only accept empty value or an array contains three numbers!');
+        }
+
+        $select = $args['select'] ?: '*';
+        $from = $args['from'] ?: " {$this->table_name} ";
+        $where = $args['where'] ?: array();
+        $orderBy = $args['orderBy'] ?: '';
+        $groupBy = $args['groupBy'] ?: '';
+        $listable = (! isset($args['listable']) || $args['listable']) ? true : false;
+        $pageable = $args['pageable'] ? true : false;
+
+        //如需分页，则limit必有，进而limitBy必有
+        if ($pageable) {
+            $limitBy = $args['limitBy'] ?: [1, 10, 10];
+        } elseif ($args['limitBy']) {
+            $limitBy = $args['limitBy'];
+        }
+        if ($limitBy) {
+            $page = max(1, (int)$limitBy[0]);
+            $limit = $limitBy[1];
+            $scope = $limitBy[2];
+            $offset = ($page - 1) * $limit;
+            $limitSql = "LIMIT {$offset}, {$limit}";
+        } else {
+            $limitSql = "";
+        }
+
         $orderSql = $orderBy ? "ORDER BY {$orderBy}" : "";
         $groupSql = $groupBy ? "GROUP BY {$groupBy}" : "";
-    
+
         $ret = $this->_seniorWhere($where);
         $whereSql = $ret['whereSql'];
         $tailSql = "FROM {$from} {$whereSql}";
-    
+
         //按需取列表
         if ($listable) {
             $sql = "SELECT {$select} {$tailSql} {$groupSql} {$orderSql} {$limitSql}";
@@ -87,7 +101,7 @@ class SeniorModel extends Model {
             $sql = '';
             $list = array();
         }
-    
+
         //按需分页
         if ($pageable) {
             if ($groupBy) {
@@ -103,22 +117,21 @@ class SeniorModel extends Model {
             $count = 0;
             $pages = array();
         }
-    
+
         $debug = array(
             'sql' => $sql,
             'totalSql' => $totalSql,
             'conds' => $ret['conds'],
         );
-
         return array('list' => $list, 'pages' => $pages, 'count' => $count, 'debug' => $debug);
     }
-    
-    
+
+
     protected function _seniorWhere(array $where, $layer = 1){
         if ($layer == 1 && count($where) == 0) { //第一层就是空数组，表示无条件查询
             return array('whereSql' => 'WHERE 1=1', 'conds' => array());
         }
-    
+
         $whereJson = json_encode($where, JSON_UNESCAPED_UNICODE);
         $allIsArray = true;
         $firstIsLogicAndAllOtherIsArray = true;
@@ -131,13 +144,13 @@ class SeniorModel extends Model {
         if ($allIsArray) {  //可能缺少处于第一元素位置的逻辑符[AND|OR|NOT]
             throw new Exception("In layer {$layer}, all elements of \$where are array, maybe you miss the first element with logic value such as 'AND','OR','NOT'! Current \$where is {$whereJson}.");
         }
-    
+
         $whereSql = "";
         $conds = array();
         if ($layer == 1) {
             $whereSql = "WHERE";
         }
-    
+        
         $inComplexLayer = $firstIsLogicAndAllOtherIsArray;
         if ($inComplexLayer) { //处于具有复杂逻辑的层，将会递归到下层
             $logic = $where[0];
@@ -162,7 +175,7 @@ class SeniorModel extends Model {
                 throw new Exception('Build whereSql failure in simple condition layer, $where must be an array with 3 elements, and the first 2 elements of $where can not be array! Current $where is '.$whereJson.'.');
             }
             list($field, $op, $value) = $where;
-            $key = str_replace('.', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
+            $key = '_'.preg_replace('/\W/', '', $field).'_'.intval(microtime(1)*1000).'_r'.rand(100, 999);
             if ($op == 'IN' || $op == 'NOT IN') {
                 if (! is_array($value) || count($value) == 0) { //含有IN运算符的条件值必须是含有至少一个元素的数组
                     throw new Exception("Build whereSql failure in [IN|NOT IN] condition layer, \$where[2] must be an array, and must contain at least one element value! Current \$where is {$whereJson}.");
@@ -174,12 +187,12 @@ class SeniorModel extends Model {
                     $conds["{$key}_{$vk}"] = $vv;
                 }
                 $whereSql .= implode(',', $keys) . ')';
-            } else {
+            } else {                
                 $whereSql .= " {$field} {$op} :{$key}";
                 $conds[$key] = $value;
             }
             return array('whereSql' => $whereSql, 'conds' => $conds);
         }
     }
-    
+
 }
