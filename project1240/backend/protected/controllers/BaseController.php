@@ -82,6 +82,7 @@ class BaseController extends Controller{
 
     protected function alert($msg = null, $url = null){
         header("Content-type: text/html; charset=utf-8");
+        $msg = str_replace("'", "\\'", $msg);
         $alert_msg = null === $msg ? '' : "alert('$msg');";
         if( empty($url) ) {
             $gourl = 'history.go(-1);';
